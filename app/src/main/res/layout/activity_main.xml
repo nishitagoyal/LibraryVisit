@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.homeactivity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/students"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student's RollNo."
+            android:fontFamily="@font/lato"
+            android:inputType="number"
+            android:id="@+id/s_rollno"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student's Name"
+            android:fontFamily="@font/lato"
+            android:id="@+id/s_name"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:hint="Student's Course"
+            android:id="@+id/s_course"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Student"
+            android:fontFamily="@font/lato"
+            android:textSize="20sp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/s_addButton"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:text="View Visits"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:id="@+id/s_viewButton"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

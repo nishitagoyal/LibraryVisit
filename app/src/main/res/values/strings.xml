@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Library Visit</string>
+    <string name="Enter_RollNo_ET">Enter RollNo.</string>
+    <string name="Enter_Name_ET">Enter Name</string>
+    <string name="Enter_Course_ET">Enter Course</string>
+
+</resources>
