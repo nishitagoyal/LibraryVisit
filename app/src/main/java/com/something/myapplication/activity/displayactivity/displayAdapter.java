@@ -80,7 +80,7 @@ public class displayAdapter extends RecyclerView.Adapter<StudentViewHolder> {
         builder.setView(subView);
         builder.create();
 
-        builder.setPositiveButton("EDIT CONTACT", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("EDIT", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 final String name = nameField.getText().toString();
