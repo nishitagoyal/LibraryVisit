@@ -1,8 +1,11 @@
 package com.something.myapplication.activity.homeactivity;
 
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 
 import android.content.BroadcastReceiver;
@@ -13,11 +16,14 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.something.myapplication.R;
 import com.something.myapplication.activity.Network.NetworkChangeListener;
@@ -29,8 +35,11 @@ import com.something.myapplication.activity.model.Student;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private DrawerLayout dl;
+    private ActionBarDrawerToggle t;
+    private NavigationView nv;
     DBController controller = new DBController(this);
     @BindView(R.id.s_rollno)EditText etRollNo;
     @BindView(R.id.s_name)EditText etName;
@@ -46,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         add = findViewById(R.id.s_addButton);
         view = findViewById(R.id.s_viewButton);
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+        dl = (DrawerLayout)findViewById(R.id.navigation_drawer);
+        t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
+        dl.addDrawerListener(t);
+        t.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        nv = (NavigationView)findViewById(R.id.nv);
+        nv.setNavigationItemSelectedListener(this);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void broadcastIntent() {
         registerReceiver(MyReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
@@ -115,8 +135,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return t.onOptionsItemSelected(item)|| super.onOptionsItemSelected(item);
+    }
+    @Override
     protected void onPause() {
         super.onPause();
         unregisterReceiver(MyReceiver);
     }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+                switch(id)
+                {
+                    case R.id.settings:
+                        Toast.makeText(MainActivity.this, "Settings",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        return true;
+                }
+                return true;
     }
+}

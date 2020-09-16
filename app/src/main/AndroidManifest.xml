@@ -2,10 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.something.myapplication">
 
-    <uses-permission
-        android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission
-        android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +12,9 @@
         android:roundIcon="@drawable/students"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.displayactivity.displayActivity"
-            android:parentActivityName=".activity.homeactivity.MainActivity"></activity>
+        <activity
+            android:name=".activity.displayactivity.displayActivity"
+            android:parentActivityName=".activity.homeactivity.MainActivity" />
         <activity
             android:name=".activity.splashactivity.SplashActivity"
             android:theme="@style/ActivityTheme">
@@ -25,16 +24,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.homeactivity.MainActivity"></activity>
-
+        <activity android:name=".activity.homeactivity.MainActivity"
+            android:theme="@style/NavigationTheme"/>
         <receiver
             android:name=".activity.Network.NetworkChangeListener"
-            android:label="NetworkChangeReceiver" >
+            android:label="NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
             </intent-filter>
         </receiver>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
