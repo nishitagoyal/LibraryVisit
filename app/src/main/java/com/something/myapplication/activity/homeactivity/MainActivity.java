@@ -1,6 +1,7 @@
 package com.something.myapplication.activity.homeactivity;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -60,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (validateFields())
                 {
                     int rollno = Integer.parseInt(etRollNo.getText().toString());
+                   // String rollno = etRollNo.getText().toString();
                     String name = etName.getText().toString();
                     String course = etCourse.getText().toString();
                     Student student = new Student(rollno,name,course);
@@ -92,17 +95,22 @@ public class MainActivity extends AppCompatActivity {
         } else if (etCourse.getText().length() > etCourseDesiredLength) {
             etCourse.setError("Max Length Allowed is 5");
             return false;
-        }else if (etRollNo.getText().length()==0 || etName.getText().length() ==0 || etCourse.getText().length() ==0) {
+        }else if (etRollNo.getText().length()==0 || etName.getText().length() ==0) {
             etRollNo.setError("This field cannot be empty");
-            etName.setError("This field cannot be empty");
+            return false;
+        }  else if (etCourse.getText().length()==0) {
             etCourse.setError("This field cannot be empty");
             return false;
-        }  else if (etName.getText().toString().trim().equalsIgnoreCase("") || etCourse.getText().toString().trim().equalsIgnoreCase("")) {
-            etName.setError("Enter Valid Name");
+        } else if (etName.getText().length()==0) {
+            etName.setError("This field cannot be empty");
+            return false;
+        } else if (etName.getText().toString().trim().equalsIgnoreCase("")) {
             etCourse.setError("Enter Valid Course");
             return false;
-        }
-        else {
+        } else if (etName.getText().toString().trim().equalsIgnoreCase("") ) {
+            etName.setError("Enter Valid Name");
+            return false;
+        } else {
             return true;
         }
     }
