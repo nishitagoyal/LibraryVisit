@@ -5,9 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Adapter;
 
 import androidx.annotation.Nullable;
 
+import com.something.myapplication.activity.displayactivity.displayAdapter;
 import com.something.myapplication.activity.model.Student;
 
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ public class DBController extends SQLiteOpenHelper {
     private static final String course = "course"; // course column name
     private static final String databasename = "studentsvisit"; // Database name
     private static final int versioncode = 1; // defining versioncode of the database
+    private displayAdapter mAdapter;
 
     public DBController(@Nullable Context context) {
         super(context, databasename, null, versioncode);
@@ -30,7 +33,7 @@ public class DBController extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {  //creating the database when the app is running for first time.
         String query;
-        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + rollno + " integer primary key, " + name + " text, " + course + " text)";
+        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + rollno + "integer primary key," + name + " text, " + course + " text" + ")"; //
         sqLiteDatabase.execSQL(query);
     }      //creating table structure using create query
 
@@ -51,7 +54,9 @@ public class DBController extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                int rollno = Integer.parseInt(cursor.getString(0));
+//                int id = Integer.parseInt(cursor.getString(0));//
+                int rollno = Integer.parseInt(cursor.getString(0));//
+//                String rollno = cursor.getString(1);
                 String name = cursor.getString(1);
                 String course = cursor.getString(2);
                 studentList.add(new Student(rollno,name,course));
@@ -66,6 +71,7 @@ public class DBController extends SQLiteOpenHelper {
     public void addStudent(Student student){
         ContentValues values = new ContentValues();
         String rollNo = String.valueOf(student.getRollno());
+
         values.put(rollno,rollNo);
         values.put(name, student.getName());
         values.put(course, student.getCourse());
@@ -80,11 +86,13 @@ public class DBController extends SQLiteOpenHelper {
         values.put(name, student.getName());
         values.put(course, student.getCourse());
         SQLiteDatabase db = this.getWritableDatabase();
-        db.update(tablename, values, rollno	+ "	= ?", new String[] { String.valueOf(student.getRollno())});
+        db.update(tablename, values, rollno	+ "	= ?", new String[] { String.valueOf(student.getRollno())});//
+        //db.update(tablename, values, rollno	+ "	= ?", new String[] { String.valueOf(student.getRollno())});
     }  //function to edit an entry and is being called from the DisplayActicity on click of edit ImageView.
 
     public void deleteStudent(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(tablename, rollno	+ "	= ?", new String[] { String.valueOf(id)});
+        //db.delete(tablename, rollno	+ "	= ?", new String[] { String.valueOf(id)});
     }        //function to delete an entry and is being called from the DisplayActicity on click of delete ImageView.
 }

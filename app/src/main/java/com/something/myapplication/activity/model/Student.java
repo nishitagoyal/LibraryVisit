@@ -4,6 +4,7 @@ public class Student {
 
     //model class defining the data and its type.
     //this includes construcors and getters and setters
+
     private	int	rollno;
     private	String name;
     private	String course;
@@ -13,11 +14,13 @@ public class Student {
         this.course = course;
     }
 
+
     public Student(int rollno, String name, String course) {
         this.rollno = rollno;
         this.name = name;
         this.course = course;
     }
+
 
     public int getRollno() {
         return rollno;

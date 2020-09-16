@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Student's RollNo."
+            android:maxLength="3"
             android:fontFamily="@font/lato"
             android:inputType="number"
             android:id="@+id/s_rollno"
@@ -35,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Student's Name"
+            android:maxLength="20"
             android:fontFamily="@font/lato"
             android:id="@+id/s_name"
             android:textSize="20sp"
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:hint="Student's Course"
+            android:maxLength="10"
             android:id="@+id/s_course"
             android:textSize="20sp"
             android:layout_marginBottom="20dp"/>
