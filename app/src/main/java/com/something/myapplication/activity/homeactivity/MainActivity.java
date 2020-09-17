@@ -3,18 +3,15 @@ package com.something.myapplication.activity.homeactivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
 import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,10 +24,11 @@ import com.google.android.material.navigation.NavigationView;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.something.myapplication.R;
 import com.something.myapplication.activity.Network.NetworkChangeListener;
-import com.something.myapplication.activity.Network.NetworkUtils;
 import com.something.myapplication.activity.database.DBController;
 import com.something.myapplication.activity.displayactivity.displayActivity;
 import com.something.myapplication.activity.model.Student;
+import com.something.myapplication.activity.settingsActivity.MyPrefFrag;
+import com.something.myapplication.activity.settingsActivity.SettingsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dl.addDrawerListener(t);
         t.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         nv = (NavigationView)findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(this);
         view.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         MyReceiver= new NetworkChangeListener();
         broadcastIntent();
-
-
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (validateFields())
                 {
                     int rollno = Integer.parseInt(etRollNo.getText().toString());
-                   // String rollno = etRollNo.getText().toString();
                     String name = etName.getText().toString();
                     String course = etCourse.getText().toString();
                     Student student = new Student(rollno,name,course);
@@ -143,14 +136,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onPause();
         unregisterReceiver(MyReceiver);
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
                 switch(id)
                 {
                     case R.id.settings:
+                       startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                         Toast.makeText(MainActivity.this, "Settings",Toast.LENGTH_SHORT).show();
                         break;
                     default:
