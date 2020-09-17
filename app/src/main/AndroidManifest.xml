@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/students"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.settingsActivity.SettingsActivity"></activity>
         <activity
             android:name=".activity.displayactivity.displayActivity"
             android:parentActivityName=".activity.homeactivity.MainActivity" />
@@ -24,8 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.homeactivity.MainActivity"
-            android:theme="@style/NavigationTheme"/>
+        <activity
+            android:name=".activity.homeactivity.MainActivity"
+            android:theme="@style/NavigationTheme" />
+
         <receiver
             android:name=".activity.Network.NetworkChangeListener"
             android:label="NetworkChangeReceiver">
