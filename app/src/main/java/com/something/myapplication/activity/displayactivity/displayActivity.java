@@ -40,8 +40,6 @@ public class displayActivity extends AppCompatActivity implements displayAdapter
     private displayAdapter mAdapter;
     RecyclerView studentView;
     EditText nameField;
-    WindowManager windowManager2;
-    WindowManager.LayoutParams params;
     EditText courseField;
 
     @Override
