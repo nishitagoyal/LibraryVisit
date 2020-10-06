@@ -27,7 +27,6 @@ import com.something.myapplication.activity.Network.NetworkChangeListener;
 import com.something.myapplication.activity.database.DBController;
 import com.something.myapplication.activity.displayactivity.displayActivity;
 import com.something.myapplication.activity.model.Student;
-import com.something.myapplication.activity.settingsActivity.MyPrefFrag;
 import com.something.myapplication.activity.settingsActivity.SettingsActivity;
 
 import butterknife.BindView;

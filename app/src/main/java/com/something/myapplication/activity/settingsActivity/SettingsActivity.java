@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.util.DisplayMetrics;
 import android.widget.Toast;
@@ -46,12 +47,34 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            switch (key) {
-                case KEY_PREF_LANGUAGE:
-                    LocaleHelper.setLocale(getContext(), PreferenceManager.getDefaultSharedPreferences(getContext()).getString(key, ""));
-                    getActivity().recreate(); // necessary here because this Activity is currently running and thus a recreate() in onResume() would be too late
-                    break;
+//            switch (key) {
+//                case KEY_PREF_LANGUAGE:
+//                    LocaleHelper.setLocale(getContext(), PreferenceManager.getDefaultSharedPreferences(getContext()).getString(key, ""));
+//                    getActivity().recreate(); // necessary here because this Activity is currently running and thus a recreate() in onResume() would be too late
+//                    break;
+//            }
+            if(key.equals(KEY_PREF_LANGUAGE))
+            {
+                Preference connectionPref = findPreference(key);
+                connectionPref.setSummary(sharedPreferences.getString(key, ""));
+                changeLanguagePref(this ,sharedPreferences.getString(key, ""));
             }
+        }
+
+        private void changeLanguagePref(MyPreferenceFragment context, String lang) {
+            Locale locale = null;
+            if (lang.equals("English")){
+                locale = new Locale("en");
+            }else if (lang.equals("Hindi")){
+                locale = new Locale("hi");
+            }else
+                {
+                locale = new Locale("en");
+            }
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            context.getResources().updateConfiguration(config, null);
         }
         @Override
         public void onResume() {
