@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">लाइब्ररी विज़िट</string>
+    <string name="app_name">Library Visit</string>
+    <string name="PrefScreen_Notification">Brbb</string>
+    <string name="PrefScreen_Languages">Ahmm</string>
     <string name="SplashLine1">Welcome to Library Visit App!</string>
-    <string name="PrefScreen_Notification">लाइब्ररी विज़िट</string>
-    <string name="PrefScreen_Languages">लाइब्ररी विज़िट</string>
     <string name="SplashLine2">Here, you can enter all the Students visits to the library.</string>
-    <string name="Enter_RollNo_ET">एंटर ऱोल्ल्णो.</string>
-    <string name="Enter_Name_ET">एंटर नामे</string>
+    <string name="Enter_RollNo_ET">Enter RollNo.</string>
+    <string name="Enter_Name_ET">Enter Name</string>
     <string name="Enter_Course_ET">Enter Course</string>
-    <string name="action_settings">सेट्टिंग्स </string>
+    <string name="action_settings">Settings</string>
     <string name="Open">Open</string>
     <string name="AddStu_Button">Add Student</string>
     <string name="ViewVisit_Button">View Visit</string>
     <string name="Close">Close</string>
-    <string name="PrefScreen_Settings">सेट्टिंग्स </string>
+    <string name="PrefScreen_Settings">Settings</string>
     <string name="PrefScreen_AboutUs">About Us</string>
     <string name="PrefScreen_CheckApp">Check App</string>
     <string name="PrefScreen_ResetApp">Reset App</string>
