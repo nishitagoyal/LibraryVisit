@@ -13,6 +13,9 @@
     <string name="AddStu_Button">Add Student</string>
     <string name="ViewVisit_Button">View Visit</string>
     <string name="Close">Close</string>
+    <string name="Update_Title">Update App</string>
+    <string name="Update_Message">Application successfully updated! </string>
+    <string name="Update_Button">Update</string>
     <string name="PrefScreen_Settings">सेट्टिंग्स </string>
     <string name="PrefScreen_AboutUs">About Us</string>
     <string name="PrefScreen_CheckApp">Check App</string>
