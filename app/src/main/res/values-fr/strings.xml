@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Library Visit</string>
+    <string name="PrefScreen_Notification">Brbb</string>
+    <string name="PrefScreen_Languages">Ahmm</string>
     <string name="SplashLine1">Welcome to Library Visit App!</string>
-    <string name="PrefScreen_Notification">Notifications</string>
-    <string name="PrefScreen_Languages">Languages</string>
     <string name="SplashLine2">Here, you can enter all the Students visits to the library.</string>
     <string name="Enter_RollNo_ET">Enter RollNo.</string>
     <string name="Enter_Name_ET">Enter Name</string>
@@ -31,5 +32,4 @@
         <item>English</item>
         <item>French</item>
     </string-array>
-
 </resources>
