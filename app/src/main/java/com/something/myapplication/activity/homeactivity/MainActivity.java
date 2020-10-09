@@ -101,28 +101,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             }
         });
         checkForUpdates();
-//        appUpdateManager = AppUpdateManagerFactory.create(this);
-//        appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
-//            @Override
-//            public void onSuccess(AppUpdateInfo result) {
-//                if((result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE)
-//                        && result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE))
-//                {
-//                    try {
-//                        appUpdateManager.startUpdateFlowForResult(
-//                                result,
-//                                AppUpdateType.IMMEDIATE,
-//                                MainActivity.this,
-//                                RequestUpdate);
-//                    }
-//                    catch (IntentSender.SendIntentException e)
-//                    {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        });
-
     }
     private void checkForUpdates()
     {
