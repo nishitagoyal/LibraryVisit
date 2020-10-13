@@ -12,10 +12,15 @@
         android:configChanges="locale|layoutDirection"
         android:roundIcon="@drawable/students"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:configChanges="locale"
+        android:theme="@style/AppTheme"
+        <activity android:name=".activity.settingsActivity.SettingsActivity"
+            android:parentActivityName=".activity.homeactivity.MainActivity"></activity>
+
         <activity android:name=".activity.settingsActivity.SettingsActivity">
 
         </activity>
+
         <activity
             android:name=".activity.displayactivity.displayActivity"
             android:parentActivityName=".activity.homeactivity.MainActivity" />

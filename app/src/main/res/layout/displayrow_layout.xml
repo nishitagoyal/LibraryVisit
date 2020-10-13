@@ -58,12 +58,6 @@
             android:layout_gravity="center"
             android:src="@drawable/penciledit"
             android:layout_marginRight="15dp"/>
-<!--        <ImageView-->
-<!--            android:layout_width="35dp"-->
-<!--            android:layout_height="35dp"-->
-<!--            android:id="@+id/s_delete"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:src="@drawable/delete"/>-->
 
     </LinearLayout>
 
