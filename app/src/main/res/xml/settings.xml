@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <SwitchPreference
+            android:title="@string/PrefScreen_Notification"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/appSettingsLanguageListArray"
+            android:entryValues="@array/appSettingsLanguageListValues"
+            android:key="languageSettings"
+            android:summary="Select app language"
+            android:title="Language" />
+        <Preference
+            android:title="@string/PrefScreen_ResetApp"
+            app:iconSpaceReserved="false"/>
+        <Preference
+            android:title="@string/PrefScreen_CheckApp"
+            app:iconSpaceReserved="false"/>
+        <Preference
+            android:title="@string/PrefScreen_AboutUs"
+            app:iconSpaceReserved="false"/>
+        android:selectable="false"
+        android:layout="@layout/settings_layout" />
+
+</PreferenceScreen>
+<!--<ListPreference-->
+<!--android:key="Languages"-->
+<!--android:title="@string/PrefScreen_Languages"-->
+<!--android:dialogTitle="@string/PrefScreen_Languages"-->
+<!--android:entries="@array/languages_entries"-->
+<!--android:entryValues="@array/languages_values"-->
+<!--app:iconSpaceReserved="false"-->
+<!--android:defaultValue="Hindi"/>-->
