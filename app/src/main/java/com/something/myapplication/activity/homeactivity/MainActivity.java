@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +29,6 @@ import com.google.android.play.core.appupdate.testing.FakeAppUpdateManager;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
-import com.google.android.play.core.tasks.Task;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.something.myapplication.BuildConfig;
 import com.something.myapplication.R;
@@ -39,6 +39,9 @@ import com.something.myapplication.activity.displayactivity.displayActivity;
 import com.something.myapplication.activity.model.Student;
 import com.something.myapplication.activity.settingsActivity.LocaleHelper;
 import com.something.myapplication.activity.settingsActivity.SettingsActivity;
+
+import java.util.Locale;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -227,16 +230,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 return true;
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
-
-        super.attachBaseContext(LocaleHelper.onAttach(base));
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (initialLocale != null && !initialLocale.equals(LocaleHelper.getPersistedLocale(this))) {
-            recreate();
-        }
-    }
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//
+//        super.attachBaseContext(LocaleHelper.onAttach(base));
+//    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        if (initialLocale != null && !initialLocale.equals(LocaleHelper.getPersistedLocale(this))) {
+//            recreate();
+//        }
+//    }
 }
