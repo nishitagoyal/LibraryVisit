@@ -22,14 +22,22 @@
     <string name="PrefScreen_ResetApp">Reset App</string>
     <string name="version_settings">Version 1.0</string>
     <string name="Language_default_value">English</string>
-    <string-array name="languages_entries">
-        <item>Hindi</item>
+    <string-array name="appSettingsLanguageListArray">
         <item>English</item>
-        <item>French</item>
-    </string-array>
-    <string-array name="languages_values">
         <item>Hindi</item>
-        <item>English</item>
-        <item>French</item>
     </string-array>
+    <string-array name="appSettingsLanguageListValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+<!--    <string-array name="languages_entries">-->
+<!--        <item>Hindi</item>-->
+<!--        <item>English</item>-->
+<!--        <item>French</item>-->
+<!--    </string-array>-->
+<!--    <string-array name="languages_values">-->
+<!--        <item>Hindi</item>-->
+<!--        <item>English</item>-->
+<!--        <item>French</item>-->
+<!--    </string-array>-->
 </resources>

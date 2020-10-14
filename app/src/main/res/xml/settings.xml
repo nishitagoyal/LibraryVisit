@@ -5,13 +5,12 @@
             android:title="@string/PrefScreen_Notification"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:key="Languages"
-            android:title="@string/PrefScreen_Languages"
-            android:dialogTitle="@string/PrefScreen_Languages"
-            android:entries="@array/languages_entries"
-            android:entryValues="@array/languages_values"
-            app:iconSpaceReserved="false"
-            android:defaultValue="Hindi"/>
+            android:defaultValue="1"
+            android:entries="@array/appSettingsLanguageListArray"
+            android:entryValues="@array/appSettingsLanguageListValues"
+            android:key="languageSettings"
+            android:summary="Select app language"
+            android:title="Language" />
         <Preference
             android:title="@string/PrefScreen_ResetApp"
             app:iconSpaceReserved="false"/>
@@ -25,3 +24,11 @@
         android:layout="@layout/settings_layout" />
 
 </PreferenceScreen>
+<!--<ListPreference-->
+<!--android:key="Languages"-->
+<!--android:title="@string/PrefScreen_Languages"-->
+<!--android:dialogTitle="@string/PrefScreen_Languages"-->
+<!--android:entries="@array/languages_entries"-->
+<!--android:entryValues="@array/languages_values"-->
+<!--app:iconSpaceReserved="false"-->
+<!--android:defaultValue="Hindi"/>-->

@@ -20,7 +20,7 @@ public class LocaleHelper {
 
     public static String getPersistedLocale(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getString(SettingsActivity.MyPreferenceFragment.KEY_PREF_LANGUAGE, "");
+        return preferences.getString(SettingsActivity.MyPreferenceFragment.KEY_GET_LANGUAGE_SETTING, "");
     }
 
     public static Context setLocale(Context context, String localeSpec) {
