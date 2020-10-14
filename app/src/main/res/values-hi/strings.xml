@@ -7,11 +7,11 @@
     <string name="SplashLine2">Here, you can enter all the Students visits to the library.</string>
     <string name="Enter_RollNo_ET">एंटर ऱोल्ल्णो.</string>
     <string name="Enter_Name_ET">एंटर नामे</string>
-    <string name="Enter_Course_ET">Enter Course</string>
+    <string name="Enter_Course_ET">एंटर कोर्स </string>
     <string name="action_settings">सेट्टिंग्स </string>
     <string name="Open">Open</string>
-    <string name="AddStu_Button">Add Student</string>
-    <string name="ViewVisit_Button">View Visit</string>
+    <string name="AddStu_Button">आड स्टूडेंट</string>
+    <string name="ViewVisit_Button">व्यू विज़िट</string>
     <string name="Close">Close</string>
     <string name="Update_Title">Update App</string>
     <string name="Update_Message">Application successfully updated! </string>
@@ -30,14 +30,4 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-<!--    <string-array name="languages_entries">-->
-<!--        <item>Hindi</item>-->
-<!--        <item>English</item>-->
-<!--        <item>French</item>-->
-<!--    </string-array>-->
-<!--    <string-array name="languages_values">-->
-<!--        <item>Hindi</item>-->
-<!--        <item>English</item>-->
-<!--        <item>French</item>-->
-<!--    </string-array>-->
 </resources>
