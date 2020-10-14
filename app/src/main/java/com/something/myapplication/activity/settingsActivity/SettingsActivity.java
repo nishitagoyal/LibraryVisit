@@ -81,12 +81,6 @@ public class SettingsActivity extends AppCompatActivity {
                     setAppLocale("en");
             }
 
-//            if (key.equals(KEY_PREF_LANGUAGE)) {
-//                Toast.makeText(getContext(),sharedPreferences.getString(key,""),Toast.LENGTH_LONG).show();
-//                Preference connectionPref = findPreference(key);
-//                connectionPref.setSummary(sharedPreferences.getString(key, ""));
-//                LocaleHelper.setLocale(getContext(),sharedPreferences.getString(key,""));
-//            }
         }
         private void setAppLocale(String localeCode){
             Resources resources = getResources();
