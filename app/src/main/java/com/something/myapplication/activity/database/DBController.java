@@ -33,7 +33,7 @@ public class DBController extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {  //creating the database when the app is running for first time.
         String query;
-        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + rollno + "integer primary key," + name + " text, " + course + " text" + ")"; //
+        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + rollno + "integer primary key," + name + " text, " + course + " text" + ")";
         sqLiteDatabase.execSQL(query);
     }      //creating table structure using create query
 

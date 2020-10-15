@@ -38,6 +38,7 @@ import com.something.myapplication.activity.database.DBController;
 import com.something.myapplication.activity.displayactivity.displayActivity;
 import com.something.myapplication.activity.model.Student;
 import com.something.myapplication.activity.settingsActivity.LocaleHelper;
+import com.something.myapplication.activity.settingsActivity.SessionManager;
 import com.something.myapplication.activity.settingsActivity.SettingsActivity;
 
 import java.util.Locale;
@@ -62,12 +63,22 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     FakeAppUpdateManager fakeappUpdateManager;
     private int APP_UPDATE_TYPE_SUPPORTED = AppUpdateType.IMMEDIATE;
     int RequestUpdate = 100;
+    SessionManager sessionManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sessionManager = new SessionManager(this);
         initialLocale = LocaleHelper.getPersistedLocale(this);
+        String language = sessionManager.getAppLanguage();
+        if (!language.equalsIgnoreCase("")) {
+            Locale locale = new Locale(language);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         ButterKnife.bind(this);
         add = findViewById(R.id.s_addButton);
         view = findViewById(R.id.s_viewButton);
