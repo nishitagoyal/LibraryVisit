@@ -1,13 +1,20 @@
 package com.something.myapplication.activity.settingsActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.util.DisplayMetrics;
 import android.widget.Toast;
 import com.something.myapplication.R;
+
+import java.util.Locale;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -26,42 +33,42 @@ public class SettingsActivity extends AppCompatActivity {
 
         public static final String KEY_GET_LANGUAGE_SETTING = "languageSettings";
 
-//        public void setLocale(String lang) {
-//            if (lang.equalsIgnoreCase(""))
-//                return;
-//            final Locale myLocale = new Locale(lang);
-//            Locale.setDefault(myLocale);
-//            saveLocale(lang);
-//            Resources res = getResources();
-//            DisplayMetrics dm = res.getDisplayMetrics();
-//            Configuration conf = res.getConfiguration();
-//            conf.locale = myLocale;
-//            res.updateConfiguration(conf, dm);
-//        }
-//
-//
-//        public void loadLocale() {
-//            String langPref = "Language";
-//            SharedPreferences prefs = this.getActivity().getSharedPreferences("LibraryVisit", Activity.MODE_PRIVATE);
-//            String language = prefs.getString(langPref, "");
-//            if (language != null) {
-//                setLocale(language);
-//            }
-//        }
-//
-//        public void saveLocale(String lang) {
-//            String langPref = "Language";
-//            SharedPreferences prefs = this.getActivity().getSharedPreferences("LibraryVisit", Activity.MODE_PRIVATE);
-//            SharedPreferences.Editor editor = prefs.edit();
-//            editor.putString(langPref, lang);
-//            prefs.getAll();
-//            editor.apply();
-//
-//            SessionManager sessionManager = null;
-//            sessionManager = new SessionManager(getContext());
-//            sessionManager.setCurrentLang(lang);
-//
-//        }
+        public void setLocale(String lang) {
+            if (lang.equalsIgnoreCase(""))
+                return;
+            final Locale myLocale = new Locale(lang);
+            Locale.setDefault(myLocale);
+            saveLocale(lang);
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+        }
+
+
+        public void loadLocale() {
+            String langPref = "Language";
+            SharedPreferences prefs = this.getActivity().getSharedPreferences("LibraryVisit", Activity.MODE_PRIVATE);
+            String language = prefs.getString(langPref, "");
+            if (language != null) {
+                setLocale(language);
+            }
+        }
+
+        public void saveLocale(String lang) {
+            String langPref = "Language";
+            SharedPreferences prefs = this.getActivity().getSharedPreferences("LibraryVisit", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString(langPref, lang);
+            prefs.getAll();
+            editor.apply();
+
+            SessionManager sessionManager = null;
+            sessionManager = new SessionManager(getContext());
+            sessionManager.setCurrentLang(lang);
+
+        }
 
         @Override
         public void onCreate(final Bundle savedInstanceState) {
@@ -99,14 +106,14 @@ public class SettingsActivity extends AppCompatActivity {
                 Toast.makeText(getContext(), sharedPreferences.getString(key, ""), Toast.LENGTH_LONG).show();
                 Preference connectionPref = findPreference(key);
                 connectionPref.setSummary(sharedPreferences.getString(key, ""));
-                LocaleHelper.setLocale(getContext(), sharedPreferences.getString(key, ""));
-//                if (sharedPreferences.getString(key, "") == "2") {
-//                    setLocale("hi");
-//                    loadLocale();
-//                } else {
-//                    setLocale("en");
-//                    loadLocale();
-//                }
+                //LocaleHelper.setLocale(getContext(), sharedPreferences.getString(key, ""));
+                if (sharedPreferences.getString(key, "") == "2") {
+                    setLocale("hi");
+                    loadLocale();
+                } else {
+                    setLocale("en");
+                    loadLocale();
+                }
             }
         }
     }

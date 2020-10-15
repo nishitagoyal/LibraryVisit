@@ -26,4 +26,12 @@ public class SessionManager {
         editor.putString(CURRENT_LANG, lang);
         editor.commit();
     }
+    public String getAppLanguage() {
+        return pref.getString(APP_LANGUAGE, "");
+    }
+
+    public void setAppLanguage(String pullExcutedTime) {
+        editor.putString(APP_LANGUAGE, pullExcutedTime);
+        editor.commit();
+    }
 }
