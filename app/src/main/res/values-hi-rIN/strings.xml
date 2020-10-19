@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">लाइब्ररी विज़िट</string>
-    <string name="SplashLine1">Welcome to Library Visit App!!!</string>
+    <string name="SplashLine1">Welcome to Library Visit App!!!!!</string>
     <string name="PrefScreen_Notification">लाइब्ररी विज़िट</string>
     <string name="PrefScreen_Languages">लाइब्ररी विज़िट</string>
     <string name="SplashLine2">Here, you can enter all the Students visits to the library.</string>
