@@ -70,7 +70,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sessionManager = new SessionManager(this);
-        initialLocale = LocaleHelper.getPersistedLocale(this);
+        //initialLocale = LocaleHelper.getPersistedLocale(this);
         String language = sessionManager.getAppLanguage();
         if (!language.equalsIgnoreCase("")) {
             Locale locale = new Locale(language);
@@ -79,6 +79,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         }
+        sessionManager.setCurrentLang(getResources().getConfiguration().locale.toString());
         ButterKnife.bind(this);
         add = findViewById(R.id.s_addButton);
         view = findViewById(R.id.s_viewButton);

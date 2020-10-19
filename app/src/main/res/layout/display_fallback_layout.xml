@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Student Visits Today!"
+        android:text="@string/fallbackmessage"
         android:textAlignment="center"
         android:fontFamily="@font/lato"
         android:layout_marginTop="5dp"
