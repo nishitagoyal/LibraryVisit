@@ -21,6 +21,8 @@
     <string name="PrefScreen_CheckApp">Check App</string>
     <string name="PrefScreen_ResetApp">Reset App</string>
     <string name="version_settings">Version 1.0</string>
+    <string name="fallbackmessage">नो स्टूडेंट विज़िट्स टुडे!</string>
+
     <string name="Language_default_value">English</string>
     <string-array name="appSettingsLanguageListArray">
         <item>English</item>
